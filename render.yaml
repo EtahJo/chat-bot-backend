@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: student-predictor-backend
+    name: sherpa-chatbot-backend
     env: python
     plan: free
     autoDeploy: true
@@ -10,7 +10,7 @@ services:
       python manage.py collectstatic --noinput
       python manage.py migrate
 
-    startCommand: gunicorn config.wsgi:application
+    startCommand: gunicorn bot_backend.wsgi:application
 
     envVars:
       - key: DJANGO_DEBUG
