@@ -10,7 +10,7 @@ services:
       python manage.py collectstatic --noinput
       python manage.py migrate
 
-    startCommand: gunicorn bot_backend.wsgi:application
+    startCommand: gunicorn bot.wsgi:application
 
     envVars:
       - key: DJANGO_DEBUG
